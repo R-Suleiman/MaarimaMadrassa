@@ -1,0 +1,11 @@
+1. see how you can get admin regNo without using session, to fetch the data
+2. Max-leng of the words
+3. check business updation, picture values need to stay there if not updated
+   Also when user attach a pic during posting business, display it. Same case for admin news posting
+4. business user reviews
+
+
+
+**  When removing it, can't view user profile.
+    try checking some php OOP concepts, see if its possible having multiple classes extending to the same class on different files.
+    check the concept of Inheritance in PHP, if it supports hierarchichal inheritance
