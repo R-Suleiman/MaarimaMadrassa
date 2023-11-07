@@ -444,6 +444,20 @@ class News extends Database
         return $results;
     }
 
+                // function to get all gallery
+    public function getAllGallery()
+    {
+        $sql = "SELECT * FROM {$this->gallery} ORDER BY image_ID DESC";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $results = [];
+        }
+        return $results;
+    }
+
             // function to count number of gallery rows
             public function getGalleryCount()
             {

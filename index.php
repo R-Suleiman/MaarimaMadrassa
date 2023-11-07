@@ -111,30 +111,21 @@
           require_once 'assets/php/admin_add_news_code.php';
               $obj = new News();
 
-              $start = 0;
-              $limit = 4;
-              $news = $obj->getTrendingNews($start, $limit);
+              $news = $obj->getAllGallery();
               if(!empty($news)) {
               foreach($news as $new) {
-                $category = $obj->getCategoryName($new['category_ID']);
-                $count = strlen($new['news_title']);
-                $count2 = strlen($new['news_description']);
+                $count = strlen($new['image_description']);
                 if ($count > 55) {
-                  $title = substr($new['news_title'], 0, 30). ' . . . ';
+                  $title = substr($new['image_description'], 0, 30). ' . . . ';
                 } else {
-                  $title = $new['news_title'];
+                  $title = $new['image_description'];
                 }
-                if ($count2 > 75) {
-                  $desc = substr($new['news_description'], 0, 75). ' . . . ';
-                } else {
-                  $desc = $new['news_description'];
-                }
+
                 echo '
-                <div class="single_iteam" style="background-image: url(\'assets/images/news/'.$new['news_image1'].'\'); background-size: cover;">
+                <div class="single_iteam" style="background-image: url(\'assets/images/gallery/'.$new['image_name'].'\'); background-size: cover;">
                     <div class="slider_article">
-                        <label class="category-lable">'.$category.'</label>
-                        <h2 id="trendHead"><a href="pages/single_page.php?id='.$new['news_ID'].'">'.$title.'</a></h2>
-                        <p id="trendDesc"">'.$desc.'</p>
+                        <h2 id="trendHead"><a href="pages/gallery.php">'.$title.'</a></h2>
+                        <p id="trendDesc"">'.$new['date_added'].'</p>
                     </div>
                 </div>
             ';
