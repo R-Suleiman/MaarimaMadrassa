@@ -1,0 +1,2 @@
+# MaarimaMadrassa
+This web application project is designed for an Organization that offers education and knowledge to it's students(users). It's purpose is to facilitate the easy sharing of information between the users and the orgainzation. The organization is able to post different news and updates of current events for it's users to see. Users can also provide feedback to the organization based on different matters.
